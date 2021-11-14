@@ -1,0 +1,10 @@
+alb-ingress % eksctl utils associate-iam-oidc-provider --region=us-east-1 --cluster=<name> --approve
+2021-11-14 16:45:57 [ℹ]  eksctl version 0.73.0
+2021-11-14 16:45:57 [ℹ]  using region us-east-1
+2021-11-14 16:45:58 [ℹ]  will create IAM Open ID Connect provider for cluster "<>" in "us-east-1"
+2021-11-14 16:45:58 [✔]  created IAM Open ID Connect provider for cluster "<>" in "us-east-1"
+alb-ingress % eksctl create iamserviceaccount --cluster=<> --namespace=kube-system --name=aws-load-balancer-controller --attach-policy-arn=arn:aws:iam::AWS_ID:policy/AWSLoadBalancerControllerIAMPolicy --override-existing-serviceaccounts --approve
+2021-11-14 16:46:33 [ℹ]  eksctl version 0.73.0
+2021-11-14 16:46:33 [ℹ]  using region us-east-1
+Error: describing CloudFormation stacks for "clustername": AccessDenied: User: arn:aws:iam::$AWS_ID:user/$USERNAME is not authorized to perform: cloudformation:ListStacks on resource: arn:aws:cloudformation:us-east-1:$AWS_ID:stack/*/* because no identity-based policy allows the cloudformation:ListStacks action
+	status code: 403, request id: d30c4a50-f11f-41c1-9918-7b6d39b7ee88
