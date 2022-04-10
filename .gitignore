@@ -30,3 +30,4 @@ override.tf.json
 # example: *tfplan*
 .idea/
 /eks/kubeconfig_joey_exercise_eks
+*jrahm*
